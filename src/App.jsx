@@ -13,6 +13,8 @@ import TeacherDashboard from '@/pages/teacher/TeacherDashboard';
 import ManageStudents from '@/pages/teacher/ManageStudents';
 import AttendanceReports from '@/pages/teacher/AttendanceReports';
 import StudentDashboard from '@/pages/student/StudentDashboard';
+import MyAttendance from '@/pages/student/MyAttendance';
+import Profile from '@/pages/student/Profile';
 import { ROLES } from '@/utils/constants';
 
 const App = () => {
@@ -130,6 +132,22 @@ const App = () => {
               element={
                 <ProtectedRoute allowedRoles={[ROLES.STUDENT]}>
                   <StudentDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="student/attendance"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.STUDENT]}>
+                  <MyAttendance />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="student/profile"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.STUDENT]}>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
