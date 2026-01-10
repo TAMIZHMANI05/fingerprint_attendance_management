@@ -19,6 +19,18 @@ export const getAttendanceReport = async (params = {}) => {
 };
 
 /**
+ * Get attendance for a specific student
+ * @param {string} studentId - Student ID
+ * @param {Object} params - { startDate, endDate }
+ */
+export const getAttendanceByStudent = async (studentId, params = {}) => {
+  const response = await api.get(`/attendance/report`, {
+    params: { studentId, ...params },
+  });
+  return response.data;
+};
+
+/**
  * Create manual attendance entry
  * @param {Object} data - { studentId, action, session, timestamp, deviceId }
  */

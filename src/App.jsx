@@ -10,6 +10,8 @@ import Students from '@/pages/admin/Students';
 import Devices from '@/pages/admin/Devices';
 import Reports from '@/pages/admin/Reports';
 import TeacherDashboard from '@/pages/teacher/TeacherDashboard';
+import ManageStudents from '@/pages/teacher/ManageStudents';
+import AttendanceReports from '@/pages/teacher/AttendanceReports';
 import StudentDashboard from '@/pages/student/StudentDashboard';
 import { ROLES } from '@/utils/constants';
 
@@ -102,6 +104,22 @@ const App = () => {
               element={
                 <ProtectedRoute allowedRoles={[ROLES.TEACHER]}>
                   <TeacherDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="teacher/students"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.TEACHER]}>
+                  <ManageStudents />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="teacher/reports"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.TEACHER]}>
+                  <AttendanceReports />
                 </ProtectedRoute>
               }
             />
