@@ -5,6 +5,10 @@ import ProtectedRoute from '@/components/common/ProtectedRoute';
 import Layout from '@/components/layout/Layout';
 import Login from '@/pages/Login';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
+import Teachers from '@/pages/admin/Teachers';
+import Students from '@/pages/admin/Students';
+import Devices from '@/pages/admin/Devices';
+import Reports from '@/pages/admin/Reports';
 import TeacherDashboard from '@/pages/teacher/TeacherDashboard';
 import StudentDashboard from '@/pages/student/StudentDashboard';
 import { ROLES } from '@/utils/constants';
@@ -56,6 +60,38 @@ const App = () => {
               element={
                 <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
                   <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/teachers"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+                  <Teachers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/students"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+                  <Students />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/devices"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+                  <Devices />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/reports"
+              element={
+                <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+                  <Reports />
                 </ProtectedRoute>
               }
             />
